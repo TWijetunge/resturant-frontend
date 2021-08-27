@@ -11,10 +11,10 @@
     
     <div fxFlex>
      <mat-grid-list cols="2" rowHeight="200px">     <!--..........<mat-lst fxFlex> became <mat-grid-list>......-->          
-        <mat-grid-tile *ngFor="let dish of dishes"> <!--..........<mat-lst-item> became <mat-grid-tile>......-->
+        <mat-grid-tile *ngFor="let dish of dishes"  (click)="onSelect(dish)"> <!--..........<mat-lst-item> became <mat-grid-tile>......-->
             <img height="200px" width="200px" src={{dish.image}} alt={{dish.name}}>
             <mat-grid-tile-footer>
-                <h1>{{dish.name | uppercase}}</h1>
+                <h1>{{dish.name | uppercase}}</h1>  <!--here, i have used a "filter" that modifies the corresponding value-->
 
             </mat-grid-tile-footer>
             
@@ -22,6 +22,6 @@
     </mat-grid-list>
     </div>
      
-    <app-dishdetail></app-dishdetail>
+    <app-dishdetail [dish]="selectedDish"></app-dishdetail>
 
     </div>
