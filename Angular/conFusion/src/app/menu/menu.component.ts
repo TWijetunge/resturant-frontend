@@ -1,25 +1,27 @@
 import { Component, OnInit } from '@angular/core';
 import {Dish} from '../shared/dish';            //when we import a file from a folder, we use ../ in order to access the folder first.
-import {DISHES} from '../shared/dishes';
+import { DishService } from '../services/dish.service';
 
 
 
 @Component({
-  selector: 'app-menu',
+  selector: 'app-outlet',
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
 
-  dishes: Dish[] = DISHES;
+  //dishes: Dish[] = DISHES;
 
  selectedDish: Dish = new Dish;
+  dishes: Dish[] = [];  //initializing "dishes"
 
 
 
-  constructor() { }
+  constructor(private dishService: DishService) { }
 
   ngOnInit(): void {
+    this.dishes=this.dishService.getDishes();
   }
 
   onSelect(dish:Dish){
