@@ -26,6 +26,16 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 
 import { PromotionService } from './services/promotion.service';
 
+import { LeaderService } from './services/leader.service';
+import { LoginComponent } from './login/login.component';
+
+import {MatDialogModule} from '@angular/material/dialog';
+
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { FormsModule } from '@angular/forms';
+
 @NgModule({          //this is a decorator which is also a function and it enables us to modify javascript ; this contains some metadata as follows
   declarations: [
     AppComponent,    //all components are declared in the module
@@ -35,7 +45,8 @@ import { PromotionService } from './services/promotion.service';
     FooterComponent,
     HomeComponent,
     AboutComponent,
-    ContactComponent    // recently created new "menu" component is included in this decorator.................................
+    ContactComponent,
+    LoginComponent    // recently created new "menu" component is included in this decorator.................................
   ],
   imports: [         // all imports are declared here
     BrowserModule,
@@ -46,11 +57,20 @@ import { PromotionService } from './services/promotion.service';
     MatGridListModule,
     MatCardModule,
     MatButtonModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatDialogModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatCheckboxModule
   ],
   providers: [
     DishService,
-    PromotionService
+    PromotionService,
+    LeaderService
+  ],
+  entryComponents:[
+    LoginComponent
   ],
   bootstrap: [AppComponent]
 })
