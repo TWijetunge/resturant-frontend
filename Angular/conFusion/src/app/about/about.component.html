@@ -57,7 +57,7 @@
   <div fxFlex>
     <h2>Corporate Leadership</h2>
 
-<mat-list>
+<mat-list *ngIf="leaders">
     <mat-list-item fxLayout="row"  *ngFor="let leader of leaders" >
     <div fxLayoutGap="10px" fxFlex><img mat-line src={{leader.image}} alt={{leader.name}} style="border-radius: 50%;"></div>
            <div fxFlex> <p mat-line><b>{{leader.name}}</b></p>
@@ -66,6 +66,9 @@
         
     </mat-list-item>
 </mat-list>
+<div fxFlex [hidden]="leaders">
+  <mat-spinner></mat-spinner><h4>Loading.....Please Wait.....</h4><!--Spinner......-->
+</div>
     
     
   </div>

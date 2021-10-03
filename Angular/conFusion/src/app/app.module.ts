@@ -39,6 +39,8 @@ import { ReactiveFormsModule} from '@angular/forms';
 import {MatSelectModule} from '@angular/material/select';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
 @NgModule({          //this is a decorator which is also a function and it enables us to modify javascript ; this contains some metadata as follows
   declarations: [
     AppComponent,    //all components are declared in the module
@@ -68,7 +70,8 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
     MatCheckboxModule,
     ReactiveFormsModule,
     MatSelectModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatProgressSpinnerModule
   ],
   providers: [
     DishService,
